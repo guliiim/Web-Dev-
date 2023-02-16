@@ -1,0 +1,116 @@
+1)javascript 中的注释：// ./* */.
+在大多数的编辑器中，一行代码可以使用 Ctrl+/ 快捷键进行单行注释，诸如 Ctrl+Shift+/ 的快捷键可以进行多行注释（选择代码，然后按下快捷键）
+
+2)确保 “use strict” 出现在最顶部
+请确保 "use strict" 出现在脚本的最顶部，否则严格模式可能无法启用。
+
+没有办法取消 use strict
+没有类似于 "no use strict" 这样的指令可以使程序返回默认模式。
+
+3)variable
+    1.在 JavaScript 中创建一个变量，我们需要用到 let 关键字。
+    eg:let message;
+    message = 'Hello'; // 将字符串 'Hello' 保存在名为 message 的变量中. OR (let message = 'Hello!'; )
+    alert(message);
+
+    2.变量命名
+    JavaScript 的变量命名有两个限制：
+        变量名称必须仅包含字母、数字、符号 $ 和 _。
+        首字符必须非数字。
+        区分大小写
+4)const 
+    使用 const 声明的变量称为“常量”。它们不能被修改，如果你尝试修改就会发现报错：
+    const myBirthday = '18.04.1982';
+5)data type
+    在 JavaScript 中有 8 种基本的数据类型（译注：7 种原始类型和 1 种引用类型）:
+        1.number type
+        2.BigInt 类型
+        3.String 类型
+            let str = "Hello";
+            let str2 = 'Single quotes are ok too';
+            let phrase = `can embed another ${str}`;
+            在 JavaScript 中，有三种包含字符串的方式。
+
+            双引号："Hello".
+            单引号：'Hello'.
+            反引号：`Hello`.
+            双引号和单引号都是“简单”引用，在 JavaScript 中两者几乎没有什么差别。
+
+            反引号是 功能扩展 引号。它们允许我们通过将变量和表达式包装在 ${…} 中，来将它们嵌入到字符串中。
+        4.boolean type
+        5.null 
+        6.undefined
+            undefined 的含义是 未被赋值。
+        7.Object 类型和 Symbol 类型
+        8.typeof 运算符
+            typeof 运算符返回参数的类型。
+            eg:typeof true // "boolean"
+6)交互：alert、prompt 和 confirm
+    1.alert:弹出的这个带有信息的小窗口被称为 模态窗。“modal” 意味着用户不能与页面的其他部分（例如点击其他按钮等）进行交互，直到他们处理完窗口。在上面示例这种情况下 —— 直到用户点击“确定”按钮。
+    2.prompt:
+        浏览器会显示一个带有文本消息的模态窗口，还有 input 框和确定/取消按钮。
+        title:显示给用户的文本
+        default:可选的第二个参数，指定 input 框的初始值。
+    3.confirm:
+        confirm 函数显示一个带有 question 以及确定和取消两个按钮的模态窗口。
+        点击确定返回 true，点击取消返回 false。
+
+7)类型转换
+    1.字符串转换
+    eg:
+        let value = true;
+        alert(typeof value); // boolean
+
+        value = String(value); // 现在，值是一个字符串形式的 "true"
+        alert(typeof value); // string
+    2.数字型转换
+    eg:
+        let str = "123";
+        alert(typeof str); // string
+
+        let num = Number(str); // 变成 number 类型 123
+        alert(typeof num); // number
+    3.布尔型转换
+8)基础运算符，数学运算
+   1.自增 ++ 将变量与 1 相加
+    自减 -- 将变量与 1 相减
+        注：自增/自减只能应用于变量。试一下，将其应用于数值（比如 5++）则会报错。
+10）条件分支：if 和 '?'
+    eg1:
+    let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+
+    if (year == 2015){
+        alert( 'You are right!' );
+    }
+    eg2:
+    let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+
+    if (year == 2015) {
+    alert( 'You guessed it right!' );
+    } else {
+    alert( 'How can you be so wrong?' ); // 2015 以外的任何值
+    }
+11)逻辑运算符
+    1.||（或），&&（与），!（非)
+12）对象
+    1.let user = new Object(); // “构造函数” 的语法
+    let user = {};  // “字面量” 的语法
+    2.写法：
+        let user = {};
+
+        // 设置
+        user["likes birds"] = true;
+
+        // 读取
+        alert(user["likes birds"]); // true
+
+        // 删除
+        delete user["likes birds"];
+13对象的复制
+    1.
+    let user = { name: "John" };
+
+    Object.assign(user, { name: "Pete" });
+
+    alert(user.name); // 现在 user = { name: "Pete" }
+

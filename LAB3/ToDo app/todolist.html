@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List</title>
+        <style>
+            * {
+            box-sizing: border-box;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            ul li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            background: white  ;
+            font-size: 18px;
+            transition: 0.2s;
+            }
+            ul li.checked {
+            background:white ;
+            color:black ;
+            text-decoration: line-through;
+            }
+
+            ul li.checked::before {
+            content: '';
+            position: absolute;
+            border-color: blue ;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 10px;
+            left: 16px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
+            }
+
+            .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px 12px 16px;
+            background-color:white;
+            color: red;
+            }
+            .head{
+                background-color: black;
+                height:50px;
+                width: 100%;
+                color:white;
+                left:20px;
+            }
+            .header {
+                background-color: white ;
+                padding: 30px 40px;
+                color: black ;
+                text-align: center;
+            }
+
+            .header:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            input {
+                margin: 0;
+                border: none;
+                border-radius: 0;
+                width: 75%;
+                padding: 10px;
+                float: left;
+                font-size: 16px;
+            }
+            .addBtn {
+                padding: 10px;
+                width: 10%;
+                background:blue;
+                color:white ;
+                float: left;
+                text-align: center;
+                font-size: 16px;
+                cursor: pointer;
+                transition: 0.3s;
+                border-radius: 0;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="head">
+            <h4>ToDo List</h4>
+        </div>
+        <div id="myDIV" class="header">
+            <h2>ToDo List</h2>
+            <input type="text" id="myInput" placeholder="New Task">
+            <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+          
+        <ul id="myUL">
+            <li>Hit the gym</li>
+            <li class="checked">Pay bills</li>
+            <li>Meet George</li>
+            <li>Buy eggs</li>
+            <li>Read a book</li>
+            <li>Organize office</li>
+        </ul>
+
+        <script>
+            //every line add delete button
+            let myNodelist = document.getElementsByTagName("LI");
+            for (let i = 0; i < myNodelist.length; i++) {
+                let span = document.createElement("SPAN");
+                let txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
+            }
+
+            //delete operate
+            let close = document.getElementsByClassName("close");
+                for (let i = 0; i < close.length; i++) {
+                    close[i].onclick = function() {
+                        let div = this.parentElement;
+                        div.style.display = "none";
+                    }
+            }
+            
+            //already finished
+            let list = document.querySelector('ul');
+            list.addEventListener('click', function(ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+            }, false);
+
+            //input
+            function newElement() {
+                let li = document.createElement("li");
+                let inputValue = document.getElementById("myInput").value;
+                let t = document.createTextNode(inputValue);
+                li.appendChild(t);
+                if (inputValue === '') {
+                    alert("You must write something!");
+                } else {
+                    document.getElementById("myUL").appendChild(li);
+                }
+                document.getElementById("myInput").value = "";
+
+                let span = document.createElement("SPAN");
+                let txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                li.appendChild(span);
+
+                for (let i = 0; i < close.length; i++) {
+                    close[i].onclick = function() {
+                    let div = this.parentElement;
+                    div.style.display = "none";
+                    }
+                }
+            }
+
+        </script>
+    </body>
+</html>
