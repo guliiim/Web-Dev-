@@ -1,0 +1,19 @@
+<div style="margin-top: 40px;margin-left: 40px;">
+    <span *ngFor="let category of categories">
+        <button type="button" (click)="selectItem(category.name)">
+            {{category.name}}
+        </button>
+    </span>
+    <div >
+        <img class="i1" style="height: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-l5YEkwcJUeFVX8f32HKbRZr8-GW1ZLhq6A&usqp=CAU" alt="">
+        <img class="i2" style="height: 100px;" src="https://is4.fwrdassets.com/images/p/fw/z/MNIF-WZ276_V1.jpg" alt="">
+        <img class="i3" style="height: 100px;" src="https://is4.fwrdassets.com/images/p/fw/z/STCH-WD69_V1.jpg" alt="">
+        <img class="i4" style="width: 62px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+    </div>
+    
+    <span *ngFor="let category of categories">
+        <span *ngIf="choice == category.name">
+            <app-product-list [categoryy]="category.name"></app-product-list>
+
+        </span>
+    </span>

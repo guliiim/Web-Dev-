@@ -1,0 +1,9 @@
+h1{
+    color: rgb(192, 54, 54);
+    font-weight: 600;
+    font-family:Impact, fantasy;
+    font-size:60px;
+    position: absolute;
+    left: 80px;
+    top:30px;
+  }
