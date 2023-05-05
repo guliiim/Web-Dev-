@@ -1,0 +1,61 @@
+
+.login-menu, .logged {
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  width: 20%;
+  padding: 20px;
+  background-color:white;
+  border-radius: 5px;
+  border-color: #943d24;
+ 
+}
+
+.logout-button{
+  background-color:#943d24;
+  color:#fffbf0;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#Username{
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fffbf0;
+  border-radius: 5px;
+  background-color:#fffbf0;
+}
+#password{
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fffbf0;
+  border-radius: 5px;
+  background-color: #fffbf0;
+}
+
+.form{
+  margin-bottom: 8px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #943d24;
+  color:#fffbf0;
+  cursor: pointer;
+}
+

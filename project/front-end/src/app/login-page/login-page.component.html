@@ -1,0 +1,48 @@
+<ng-container *ngIf="!logged" >
+  
+  <div >
+    
+    <form class="login-menu" >
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input [(ngModel)]="username" type="email" id="Username" name="Username" >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input [(ngModel)]="password" type="password" id="password" name="password">
+      </div>
+
+      <div class="form-group">
+        <button class="form"  routerLink="/home" (click)="submit()"  *ngIf="!registerMode">
+          Login
+        </button>
+
+        <button class="form" (click)="registerMode = true"  *ngIf="!registerMode">
+          Register
+        </button>
+
+        <button class="form" (click)="submit()"  *ngIf="registerMode">
+          Register
+        </button>
+
+        <button  class="form" (click)="registerMode = false" *ngIf="registerMode">
+          I already have an account
+        </button>
+      </div>
+      
+    </form>
+    
+  </div>
+</ng-container>
+
+<ng-container *ngIf="logged">
+
+  <div  >
+    <button class="logout-button" (click)="logout()" routerLink="/" type="submit">Logout</button>
+  </div>
+
+
+
+</ng-container>

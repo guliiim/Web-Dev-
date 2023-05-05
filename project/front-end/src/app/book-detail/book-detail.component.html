@@ -1,0 +1,48 @@
+
+<div class="items">
+    <h2>{{book.name}}</h2>
+    <div class="about-book">
+        <div class="about-left">
+            <img src="{{ book.image }}" alt="book img">
+            
+        </div>
+        <div class="about-right">
+            <span >
+                <p><b>Author:</b> {{ book.author }}</p>
+                <p><b>Year:</b> {{ book.year }}</p>
+                <p><b>Price:</b> {{book.price | currency: '$'}}</p>
+            </span>
+            
+            <div class="description">
+                <h3>About description</h3>
+                <span>
+                    <p>{{ book.description }}</p>
+                </span>
+            </div>
+            <div class="button">
+                <button (click)="goBack()">Go Back</button>
+                
+            </div>
+            <div class="button">
+                <button (click)="addToCart()">buy</button>
+            </div>
+
+
+            
+        </div>
+
+        
+    </div>
+	
+
+
+
+    
+
+<!--<div>
+    <div>
+        <button (click)="addToCart(book.id)">Add to cart</button>
+    </div>
+      </div>-->
+
+</div>

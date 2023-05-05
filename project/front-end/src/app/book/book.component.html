@@ -1,0 +1,11 @@
+<div *ngIf="loaded">
+	<div class="items">
+		<div *ngFor="let book of books;" class="items-book"  [routerLink]="['/book_page/']">
+			<ul>
+				<li [routerLink]="['/book', book.id]">
+					{{ book.name }}
+				</li>
+			</ul>	
+		</div>
+	</div>
+</div>

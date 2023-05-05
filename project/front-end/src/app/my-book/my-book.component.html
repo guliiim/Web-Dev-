@@ -1,0 +1,32 @@
+<div *ngIf="loaded">
+  <div class="items">
+    <h1 *ngIf="orders.length != 0">User Orders</h1>
+    <div *ngFor="let order of orders" class="items-book">
+      
+      <h2>Order Detail #{{order.id}}</h2>
+      <h3>Book: {{order.book}}</h3>
+      <h3>User: {{order.user}}</h3>
+      <p>Status: {{ order.status }}</p>
+     
+      
+    </div>
+  </div>
+
+  <div class="items">
+    <h1 *ngIf="moderator_orders.length != 0">User Orders for moderator</h1>
+    <div *ngFor="let m_order of moderator_orders" class="items-book">
+      <h2>Order Detail #{{m_order.id}}</h2>
+      <h3>Book: {{m_order.book}}</h3>
+      <h3>User: {{m_order.user}}</h3>
+      <p>Status: {{m_order.status}}</p>
+      <div class="button">
+        <button  (click)="confirmOrder(m_order.id, m_order.book, m_order.user)">Confirm</button>
+        <button  (click)="cancelOrder(m_order.id, m_order.book, m_order.user)">Cancel</button>
+        <button  (click)="deleteOrder(m_order.id)">Delete</button>
+      </div>
+        
+      
+      
+    </div>
+  </div>
+</div>

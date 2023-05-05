@@ -1,0 +1,44 @@
+.items{
+    margin-left: 60px;
+    margin-top: 100px;
+    
+}
+.items h2{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+.about-book {
+    display: flex;
+    gap: 100px;
+}
+.about-left {
+    display: flex;
+    flex-direction: column;
+}
+.about-right {
+    display: flex;
+    margin-right: 150px;
+    flex-direction: column;
+    gap: 15px;
+    height: 400px;
+    color:#6e4111;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.description {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+button{
+    background-color:#943d24;
+    color:#fffbf0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+}
