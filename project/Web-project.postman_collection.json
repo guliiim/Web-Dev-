@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "3fbf0865-7b7a-40c9-b4cc-f009c1326b39",
+		"name": "Web-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12318826"
+	},
+	"item": [
+		{
+			"name": "back-end request",
+			"item": [
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "getCategories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/categories/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCategoryById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/categories/5/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"categories",
+										"5",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"New category\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/categories/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCategory",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"new new category\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/categories/6/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"categories",
+										"6",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCategory",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/categories/6/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"categories",
+										"6",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "book",
+					"item": [
+						{
+							"name": "getBooks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/books/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"books",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getBookById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/books/12/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"books",
+										"12",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getBooksByCategoryId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/categories/8/books/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"categories",
+										"8",
+										"books",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createBook",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjo1LCJleHBfdGltZSI6MTY4MjkzNzI5Mn0.aoiUf1Z6J9fBxDpBZAeZlCML4jBP9UgLQsA3rUZi3QY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"COPY E\",\r\n    \"author\": \"COPY TW\",\r\n    \"description\": \"COPY THRE\",\r\n    \"price\": 0.00,\r\n    \"year\": 2004,\r\n    \"image\": \"https://images-us.bookshop.org/ingram/9780692942192.jpg?height=500&v=v2\",\r\n    \"category\": 7,\r\n    \"created_by\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/books/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"books",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateBook",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"COPY\",\r\n    \"author\": \"COPY TWO\",\r\n    \"description\": \"COPY THREE\",\r\n    \"price\": 0.00,\r\n    \"year\": 2003,\r\n    \"image\": \"no image only jokes\",\r\n    \"category\": 7,\r\n    \"created_by\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/books/16/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"books",
+										"16",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteBook",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHBfdGltZSI6MTY4Mjk0Mzg2Mn0.3o5Eo-YYZtLqPgx-1oZpTRGbNFHit3Tc5pnxtu4YtIA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/books/22/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"books",
+										"22",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "order",
+					"item": [
+						{
+							"name": "getOrders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjo1LCJleHBfdGltZSI6MTY4MjkzODQ1OX0.WqcU30UOpnNMpoWupZ0q5L3O-JQ8kiymyNrP749lm70",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/orders/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getOrderById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/orders/1/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"orders",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getOrdersByUserId",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHBfdGltZSI6MTY4MjkzODU0Nn0.dYF__Osa_18GXk7D9hxlLyhFWT9XVvMwrr6WXzR8mEw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/users/orders",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"users",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createOrder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book\": 1,\r\n    \"user\": 2,\r\n    \"status\": \"shipping\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/orders/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateOrder",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book\": 1,\r\n    \"user\": 2,\r\n    \"status\": \"successful\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/orders/2/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"orders",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteOrder",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/orders/2/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"orders",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "getUsers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/users/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUserById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/users/1/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"users",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"user2\",\r\n    \"password\": \"123\",\r\n    \"role\": \"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/users/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"user1\",\r\n    \"password\": \"123\",\r\n    \"role\": \"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/users/2/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"users",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}api/users/3/",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"users",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"moderator2\",\r\n    \"password\": \"123\",\r\n    \"role\": \"moderator\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/register",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"moderator1\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/login",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjo0LCJleHBfdGltZSI6MTY4MjkzNDkxMH0.VCSVOJtOKZ2dC01YLiy2AMDb4dUZe7qVYEs6LeXb4Bw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/test",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
